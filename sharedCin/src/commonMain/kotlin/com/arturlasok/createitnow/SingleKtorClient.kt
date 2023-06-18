@@ -7,7 +7,7 @@ import io.ktor.client.statement.bodyAsText
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
-class SingleKtorClient() {
+class SingleKtorClient {
  private val kClient : HttpClient
      = HttpClient()
      {

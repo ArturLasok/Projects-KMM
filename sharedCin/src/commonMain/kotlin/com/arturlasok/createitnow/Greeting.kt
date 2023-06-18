@@ -1,7 +1,5 @@
 package com.arturlasok.createitnow
 
-import io.ktor.client.HttpClient
-
 class Greeting {
 
     private val platform: Platform = getPlatform()
