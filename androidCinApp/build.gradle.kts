@@ -52,5 +52,7 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.7.2")
     implementation("io.insert-koin:koin-core:$koin")
     implementation("io.insert-koin:koin-android:$koin")
+    implementation("io.coil-kt:coil:2.4.0")
+    implementation("io.coil-kt:coil-compose:2.4.0")
 
 }

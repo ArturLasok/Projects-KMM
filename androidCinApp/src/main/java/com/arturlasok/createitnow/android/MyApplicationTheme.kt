@@ -38,7 +38,12 @@ fun MyApplicationTheme(
             fontFamily = FontFamily.Default,
             fontWeight = FontWeight.Normal,
             fontSize = 16.sp
-        )
+        ),
+                h6 = TextStyle(
+                fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 10.sp
+    )
     )
     val shapes = Shapes(
         small = RoundedCornerShape(4.dp),
