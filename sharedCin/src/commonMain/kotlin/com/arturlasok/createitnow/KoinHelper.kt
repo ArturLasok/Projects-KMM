@@ -10,6 +10,7 @@ class KtorHelper : KoinComponent {
     private val ktor : SingleKtorClient by inject()
     suspend fun ktorData() : String = ktor.getServerTime()
     suspend fun ktorAppsData() : List<KMMAppData> = ktor.getAppsData()
+    fun platformForIos(linkAnd:String,linkIos: String, linkWeb: String) :String  {  return ktor.getPlatformForIos(linkAnd,linkIos,linkWeb) }
 }
 
 fun initKoin() {

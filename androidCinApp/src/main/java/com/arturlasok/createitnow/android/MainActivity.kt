@@ -66,6 +66,7 @@ class MainActivity : ComponentActivity() {
 
                     })
                     Column() {
+
                              Text(text="> arturlasok.com", style = MaterialTheme.typography.h6.copy(fontWeight = FontWeight.Bold, fontSize = 32.sp), modifier= Modifier.padding(start = 20.dp, top = 20.dp))
                             //GreetingView(text = Greeting().greet() + currentDate.value)
                             MyProjectsView(appsData =appsData)

@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -27,12 +26,12 @@ import com.arturlasok.createitnow.model.KMMAppData
 @Composable
 fun OneAppData(
     modifier: Modifier,
-    appsData: MutableState<MutableList<KMMAppData>>,
+    appsData: KMMAppData,
     appId: Int,
-    iconimgUrl: String
+    iconimgUrl: KMMAppData
 ) {
        Column(modifier=modifier) {
-           if(appsData.value.size>1) {
+           if(appsData.mAppId!=null) {
            Row(modifier= Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically) {
 
 
@@ -41,7 +40,7 @@ fun OneAppData(
                    Column(modifier = Modifier.width(32.dp).height(32.dp)) {
                        AsyncImage(
                            model = ImageRequest.Builder(LocalContext.current)
-                               .data(iconimgUrl)
+                               .data(iconimgUrl.mIconLink)
                                .crossfade(true)
                                .build(),
 
@@ -54,16 +53,16 @@ fun OneAppData(
 
 
 
-                   Text(text=appsData.value[appId-1].mAppNamePL, style = MaterialTheme.typography.h6.copy(fontWeight = FontWeight.Bold), textDecoration = TextDecoration.Underline, modifier= Modifier.padding(start = 4.dp))
+                   Text(text=appsData.mAppNamePL, style = MaterialTheme.typography.h6.copy(fontWeight = FontWeight.Bold), textDecoration = TextDecoration.Underline, modifier= Modifier.padding(start = 4.dp))
 
 
                }
 
-               Text(text=appsData.value[appId-1].mAppDescPL, style = MaterialTheme.typography.h6, textAlign = TextAlign.Justify, modifier= Modifier.padding(start = 4.dp, top = 6.dp))
+               Text(text=appsData.mAppDescPL, style = MaterialTheme.typography.h6, textAlign = TextAlign.Justify, modifier= Modifier.padding(start = 4.dp, top = 6.dp))
                Text(text="\nPlatform", style = MaterialTheme.typography.h6.copy(fontWeight = FontWeight.Bold), textAlign = TextAlign.Justify, modifier= Modifier.padding(start = 4.dp, top = 6.dp))
 
 
-               val platform = remember { listOf<Pair<String,String>>(Pair(appsData.value[appId-1].mAppStoreLinkAndroid,"Android"), Pair(appsData.value[appId-1].mAppStoreLinkIOS,"iOS"),Pair(appsData.value[appId-1].mAppStoreLinkWeb,"Web")) }
+               val platform = remember { listOf<Pair<String,String>>(Pair(appsData.mAppStoreLinkAndroid,"Android"), Pair(appsData.mAppStoreLinkIOS,"iOS"),Pair(appsData.mAppStoreLinkWeb,"Web")) }
                Row(modifier = Modifier.padding(start = 4.dp)) {
                    platform.onEach { platform->
                        if(platform.first.isNotEmpty()) {
@@ -73,7 +72,7 @@ fun OneAppData(
 
                }
                Text(text="\nTech stack", style = MaterialTheme.typography.h6.copy(fontWeight = FontWeight.Bold), textAlign = TextAlign.Justify, modifier= Modifier.padding(start = 4.dp, top = 6.dp))
-               Text(text=appsData.value[appId-1].mTechStack, style = MaterialTheme.typography.h6, textAlign = TextAlign.Justify, modifier= Modifier.padding(start = 4.dp, top = 6.dp))
+               Text(text=appsData.mTechStack, style = MaterialTheme.typography.h6, textAlign = TextAlign.Justify, modifier= Modifier.padding(start = 4.dp, top = 6.dp))
            }
 
 

@@ -15,7 +15,9 @@ val mAppStoreLinkIOS: String ="",
 val mAppStoreLinkWeb: String ="",
 val mAppDescPL: String = "",
 val mAppDescEng: String = "",
-val mTechStack: String = ""
+val mTechStack: String = "",
+val mIconLink: String = "",
+val mPhotoLink: String = ""
 
 )
 

@@ -37,5 +37,19 @@ class SingleKtorClient {
         }
 
     }
+    fun getPlatformForIos(linkAnd: String, linkIos: String, linkWeb: String) : String {
+        var retString =""
+        val platform = listOf<Pair<String,String>>(Pair(linkAnd,"Android"), Pair(linkIos,"iOS"),Pair(linkWeb,"Web"))
+
+        platform.onEach {platform ->
+            if(platform.first.isNotEmpty()) {
+
+                retString += platform.second
+            }
+
+        }
+
+        return retString
+    }
 
 }
